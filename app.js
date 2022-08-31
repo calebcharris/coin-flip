@@ -1,7 +1,6 @@
-const loveButton = document.getElementById("love")
+const flipButton = document.getElementById("flip")
 const answerArea = document.querySelector(".result-container")
-const krin = "Krinson"
-let loveMessage
+let coinMessage
 
 const getRandomInt = (min, max) => {
     min = Math.ceil(min);
@@ -30,19 +29,14 @@ const resultOverflow = () => {
 }
 
 const createResults = () => {
-    let love = getRandomInt(1, 2)
-    console.log(love)
-    if (love == 1) {
-        resultPrint = 'result:'
-        loveMessage = `${krin} does love you`
-    } else {
-        resultPrint = 'result:'
-        loveMessage = `${krin} doesn't love you`
-    }
+    let coin = getRandomInt(1, 2)
+    console.log(coin)
+    resultPrint = 'result:'
+    let coinMessage = (coin === 1) ? "Heads" : "Tails"
     const resultElement = document.createElement('div')
     resultElement.setAttribute('id', resultPrint + resultIndex)
     resultElement.classList.add('results')
-    resultElement.textContent = loveMessage
+    resultElement.textContent = coinMessage
     answerArea.append(resultElement)
     resultOverflow()
     console.log("index = " + resultIndex)
