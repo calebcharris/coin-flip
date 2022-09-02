@@ -45,4 +45,4 @@ const createResults = () => {
 
 }
 
-loveButton.addEventListener("click", createResults)
+flipButton.addEventListener("click", createResults)
